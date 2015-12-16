@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:state_pressed="false" android:state_selected="false" android:drawable="@drawable/common_topbar_route_bus_normal"></item>
+	<item android:state_pressed="false" android:state_selected="true" android:drawable="@drawable/common_topbar_route_bus_pressed"></item>
+	<item android:state_pressed="true" android:state_selected="false"  android:drawable="@drawable/common_topbar_route_bus_pressed"></item>
+	<item android:state_pressed="true" android:state_selected="true"  android:drawable="@drawable/common_topbar_route_bus_pressed"></item>
+	
+</selector>

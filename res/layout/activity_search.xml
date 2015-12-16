@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 顶栏搜索框 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/app_color_white"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="8dp" >
+
+        <ImageButton
+            android:id="@+id/search_btn_back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="#00FFFFFF"
+            android:src="@drawable/actionbar_back_selector" />
+
+        <RelativeLayout
+            android:id="@+id/search_btn_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <AutoCompleteTextView
+                android:id="@+id/search_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:cursorVisible="true"
+                android:imeOptions="actionSearch"
+                android:hint="搜索 [ 916 ][火车站]"
+                android:padding="6dp"
+                android:textColor="#000000"
+                android:textCursorDrawable="@null"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/search_btn_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@drawable/routeplan_searchbutton_selector"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp"
+            android:text="搜索"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#C0CCCCCC" />
+
+   	<FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ListView
+            android:id="@+id/search_result_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:listSelector="#CCCCCC"
+            android:padding="5dp"
+            android:scrollbars="@null" >
+        </ListView>
+        
+  
+    </FrameLayout>
+
+</LinearLayout>

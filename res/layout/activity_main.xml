@@ -1,0 +1,200 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:usar="http://schemas.android.com/apk/res/com.onebus"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.baidu.mapapi.map.MapView  
+	    android:id="@+id/bmapView"  
+	    android:layout_width="fill_parent"  
+	    android:layout_height="fill_parent"  
+	    android:clickable="true" />
+    
+    
+    <!-- widgets -->
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:padding="10dp"
+    	android:layout_gravity="center" >
+	    
+	    <!-- top view -->
+	    <RelativeLayout 
+	        android:id="@+id/main_topView"
+	        android:layout_width="match_parent"
+    		android:layout_height="48dp"
+    		android:background="@drawable/main_widget_shape"
+    		android:clickable="true"
+    		android:onClick="showSearchActivity" >
+	        <ImageView 
+	            android:id="@+id/main_topView_img"
+		        android:layout_width="wrap_content"
+		    	android:layout_height="match_parent"
+		    	android:padding="8dp"
+		    	android:gravity="center"
+		    	android:src="@drawable/common_icon_searchbox_magnifier"/>
+		    <TextView 
+		        android:layout_width="match_parent"
+		    	android:layout_height="match_parent"
+		    	android:gravity="center_vertical"
+		    	android:text="搜索公交线路或站点名"
+		    	android:textSize="16sp"
+		    	android:textColor="@color/light_gray"
+		    	android:layout_toRightOf="@id/main_topView_img" />
+
+		    <ImageButton 
+		        android:id="@+id/main_topView_voice"
+		        android:layout_width="wrap_content"
+		    	android:layout_height="match_parent"
+		    	android:layout_alignParentRight="true"
+		    	android:layout_marginTop="2dp"
+		    	android:layout_marginBottom="2dp"
+		    	android:layout_marginRight="2dp"
+		    	android:background="#00FFFFFF"
+		    	android:src="@drawable/main_searchbox_voice_selector" />
+		    
+		    <View 
+		        android:layout_width="0.5dp"
+		    	android:layout_height="match_parent"
+		    	android:layout_toLeftOf="@id/main_topView_voice"
+		    	android:layout_marginTop="13dp"
+		    	android:layout_marginBottom="13dp"
+		    	android:background="#EAEAEA" />
+		    
+	    </RelativeLayout>
+	    
+	    
+	    <!-- tab -->
+	    <LinearLayout 
+	        android:id="@+id/main_widget_bottomView"
+	        android:layout_width="match_parent"
+    		android:layout_height="40dp"
+    		android:layout_alignParentBottom="true"
+    		android:gravity="center"
+    		android:padding="1dp"
+    		android:orientation="horizontal"
+    		android:background="@drawable/main_widget_shape" >
+	        
+	       <com.onebus.widget.MainWidgetImageButton
+	           	android:id="@+id/main_bottombutton_nearby"
+	           	android:layout_width="match_parent"
+    			android:layout_height="wrap_content"
+    			android:layout_weight="1"
+    			android:gravity="center"
+    			android:padding="8dp"
+    			android:background="@drawable/main_widget_bottombutton_selector"
+    			usar:icon="@drawable/main_icon_nearby"
+    			usar:text="附近"
+    			usar:text_size="14sp"
+    			usar:text_marginLeft="2dp"
+    			usar:text_color="#FF000000" />
+	       <View 
+	            android:layout_width="1dp"
+	    		android:layout_height="match_parent"
+	    		android:layout_marginTop="8dp"
+	    		android:layout_marginBottom="8dp"
+	    		android:background="#C0CCCCCC"/>
+	       <com.onebus.widget.MainWidgetImageButton
+	           	android:id="@+id/main_bottombutton_route"
+	           	android:layout_width="match_parent"
+    			android:layout_height="wrap_content"
+    			android:layout_weight="1"
+    			android:gravity="center"
+    			android:padding="8dp"
+    			android:background="@drawable/main_widget_bottombutton_selector"
+    			usar:icon="@drawable/main_icon_route"
+    			usar:text="路线"
+    			usar:text_size="14sp"
+    			usar:text_marginLeft="2dp"
+    			usar:text_color="#FF000000" />
+	       <View 
+	            android:layout_width="1dp"
+	    		android:layout_height="match_parent"
+	    		android:layout_marginTop="8dp"
+	    		android:layout_marginBottom="8dp"
+	    		android:background="#C0CCCCCC"/>
+	       <com.onebus.widget.MainWidgetImageButton
+	           	android:id="@+id/main_bottombutton_nav"
+	           	android:layout_width="match_parent"
+    			android:layout_height="wrap_content"
+    			android:layout_weight="1"
+    			android:gravity="center"
+    			android:padding="8dp"
+    			android:background="@drawable/main_widget_bottombutton_selector"
+    			usar:icon="@drawable/main_icon_mine"
+    			usar:text="我的"
+    			usar:text_size="14sp"
+    			usar:text_marginLeft="2dp"
+    			usar:text_color="#FF000000" />
+	       <View 
+	            android:layout_width="1dp"
+	    		android:layout_height="match_parent"
+	    		android:layout_marginTop="8dp"
+	    		android:layout_marginBottom="8dp"
+	    		android:background="#C0CCCCCC"/>
+	       <com.onebus.widget.MainWidgetImageButton
+	           	android:id="@+id/main_bottombutton_mine"
+	           	android:layout_width="match_parent"
+    			android:layout_height="wrap_content"
+    			android:layout_weight="1"
+    			android:gravity="center"
+    			android:padding="8dp"
+    			android:background="@drawable/main_widget_bottombutton_selector"
+    			usar:icon="@drawable/main_icon_personal"
+    			usar:text="设置"
+    			usar:text_size="14sp"
+    			usar:text_marginLeft="2dp"
+    			usar:text_color="#000000" />
+	        
+	    </LinearLayout>
+	    
+	    
+	    <!-- location -->
+	    <LinearLayout 
+	        android:layout_width="45dp"
+    		android:layout_height="45dp"
+    		android:gravity="center"
+    		android:background="@drawable/main_widget_locatebutton_selector"
+    		android:layout_above="@id/main_widget_bottomView"
+    		android:layout_marginBottom="5dp"
+    		android:orientation="vertical">
+		    <ImageButton 
+		        android:id="@+id/main_location"
+		        android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content"
+	    		android:background="#00FFFFFF"
+	    		android:src="@drawable/main_icon_location"/>
+	    </LinearLayout>
+	    
+	    <!-- zoom -->
+	    <LinearLayout 
+	        android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:layout_alignParentRight="true"
+    		android:layout_above="@id/main_widget_bottomView"
+    		android:layout_marginBottom="5dp"
+    		android:background="@drawable/main_widget_locatebutton_selector"
+    		android:orientation="vertical">
+	        <ImageButton 
+	            android:id="@+id/main_zoom_in"
+		        android:layout_width="40dp"
+	    		android:layout_height="40dp"
+	    		android:padding="5dp"
+	    		android:background="@drawable/main_widget_bottombutton_selector"
+	    		android:src="@drawable/main_icon_zoomin"/>
+	        <View 
+	            android:layout_width="match_parent"
+	    		android:layout_height="0.5dp"
+	    		android:padding="8dp"
+	    		android:background="#C0CCCCCC"/>
+	        <ImageButton 
+	            android:id="@+id/main_zoom_out"
+		        android:layout_width="40dp"
+	    		android:layout_height="40dp"
+	    		android:padding="5dp"
+	    		android:background="@drawable/main_widget_bottombutton_selector"
+	    		android:src="@drawable/main_icon_zoomout"/>
+	    </LinearLayout>
+	    
+	</RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" >
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/guide_dot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dip"
+            android:gravity="right" >
+
+            <View
+                android:id="@+id/guide_dot0"
+                style="@style/dot_style"
+                android:background="@drawable/dot_focused" />
+
+            <View
+                android:id="@+id/guide_dot1"
+                style="@style/dot_style" />
+
+            <View
+                android:id="@+id/guide_dot2"
+                style="@style/dot_style" />
+
+            <View
+                android:id="@+id/guide_dot3"
+                style="@style/dot_style" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/guideView_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/guide_dot"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/welcome_btn_selector"
+        android:text="立即体验"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="#3083FF"
+        android:textStyle="bold" />
+
+</RelativeLayout>

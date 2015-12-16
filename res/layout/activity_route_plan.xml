@@ -1,0 +1,244 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <!-- 顶栏搜索框 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/app_color_white"
+        android:orientation="horizontal"
+        android:padding="8dp" >
+
+        <ImageButton
+            android:id="@+id/routePlan_btn_back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:layout_weight="3"
+            android:background="#00FFFFFF"
+            android:src="@drawable/actionbar_back_selector" />
+
+        <RelativeLayout
+            android:id="@+id/routePlan_btn_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <RadioGroup
+                android:id="@+id/routePlan_radioGroup_bus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" >
+
+                <RadioButton
+                    android:id="@+id/routePlan_btn_bus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/common_topbar_route_bus_selector"
+                    android:button="@null"
+                    android:checked="true" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/routePlan_radioGroup_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/routePlan_radioGroup_bus"
+                android:layout_weight="1" >
+
+                <RadioButton
+                    android:id="@+id/routePlan_btn_car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/common_topbar_route_car_selector"
+                    android:button="@null" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/routePlan_radioGroup_foot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/routePlan_radioGroup_bus"
+                android:layout_weight="1" >
+
+                <RadioButton
+                    android:id="@+id/routePlan_btn_foot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/common_topbar_route_foot_selector"
+                    android:button="@null" />
+            </RadioGroup>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/routePlan_btn_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@drawable/routeplan_searchbutton_selector"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp"
+            android:text="搜索"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#C0CCCCCC" />
+
+    <!-- 界面内容 -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- 搜索界面 -->
+
+        <LinearLayout
+            android:id="@+id/routePlan_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:orientation="vertical" >
+
+            <!-- 出发点和终点 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/btn_route_icon_switch_normal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical" >
+
+                        <ImageView
+                            android:id="@+id/routePlan_et_startimg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/route_crosscity_detail_startpoint" />
+
+                        <AutoCompleteTextView
+                            android:id="@+id/routePlan_et_start"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/routePlan_et_startimg"
+                            android:background="#FFFFFF"
+                            android:cursorVisible="true"
+                            android:textCursorDrawable="@null"
+                            android:selectAllOnFocus="true"
+                            android:singleLine="true"
+                            android:text="我的位置"
+                            android:hint="出发点"
+                            android:padding="8dp"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginRight="10dp"
+                        android:background="#C0CCCCCC" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical" >
+
+                        <ImageView
+                            android:id="@+id/routePlan_et_endimg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/route_crosscity_detail_endpoint" />
+
+                        <AutoCompleteTextView
+                            android:id="@+id/routePlan_et_end"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/routePlan_et_endimg"
+                            android:background="#FFFFFF"
+                            android:cursorVisible="true"
+                            android:textCursorDrawable="@null"
+                            android:singleLine="true"
+                            android:hint="终点"
+                            android:selectAllOnFocus="true"
+                            android:padding="8dp"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C0CCCCCC" />
+
+            <FrameLayout 
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ListView
+	                android:id="@+id/routePlan_result_listview"
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent" >
+	            </ListView>
+	            
+                <ListView
+	                android:id="@+id/routePlan_history_listview"
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent" >
+	            </ListView>
+                
+            </FrameLayout>
+
+        </LinearLayout>
+        
+ 		<RelativeLayout
+            android:id="@+id/routePlan_mapLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+	        <fragment
+	              android:id="@+id/routePlan_mapview"
+	              android:layout_width="match_parent"
+	              android:layout_height="match_parent"
+	              class="com.onebus.view.MapFragment"
+	              android:clickable="true" />
+ 		</RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>

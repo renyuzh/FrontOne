@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/btn_list_item_bg"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingTop="18dp"
+    android:paddingBottom="18dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp" >
+
+    <ImageView
+        android:id="@+id/routeplan_history_list_item_img"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/icon_poi_history" />
+
+    <TextView
+        android:id="@+id/routeplan_history_list_item_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:gravity="center_vertical"
+        android:text="钟楼"
+        android:textColor="#99000000"
+        android:textSize="@dimen/text_middle" />
+
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+    
+    <TextView
+        android:id="@+id/offlinemap_listitem_city"
+        android:layout_width="wrap_content"
+    	android:layout_height="match_parent"
+    	android:gravity="center_vertical"
+    	android:layout_alignParentLeft="true"
+    	android:layout_centerVertical="true"
+    	android:text="西安市"
+    	android:textAppearance="?android:attr/textAppearanceMedium" />
+       
+    <TextView
+        android:id="@+id/offlinemap_listitem_size"
+        android:layout_width="wrap_content"
+    	android:layout_height="match_parent"
+    	android:gravity="center_vertical"
+    	android:layout_marginLeft="5dp"
+    	android:layout_toRightOf="@id/offlinemap_listitem_city"
+    	android:layout_centerVertical="true"
+    	android:text="35M"
+    	android:textSize="14sp"
+    	android:textColor="@color/light_gray_text"
+    	android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/offlinemap_listitem_ratio"
+        android:layout_width="wrap_content"
+    	android:layout_height="match_parent"
+    	android:gravity="center_vertical"
+    	android:layout_marginLeft="20dp"
+    	android:layout_toRightOf="@id/offlinemap_listitem_size"
+    	android:layout_centerVertical="true"
+    	android:text="60%"
+    	android:textSize="14sp"
+    	android:textColor="#FF0000"
+    	android:textAppearance="?android:attr/textAppearanceMedium"
+    	android:visibility="gone" />
+    
+    <ImageButton 
+        android:id="@+id/offlinemap_listitem_btn_delete"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_marginTop="10dp"
+    	android:layout_alignParentRight="true"
+    	android:layout_centerVertical="true"
+    	android:minHeight="0dp"
+    	android:padding="5dp"
+    	android:background="@drawable/caldis_delete" />
+    
+    <TextView 
+        android:id="@+id/offlinemap_listitem_updateinfo"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_marginTop="10dp"
+    	android:layout_marginRight="10dp"
+    	android:layout_toLeftOf="@id/offlinemap_listitem_btn_delete"
+    	android:layout_centerVertical="true"
+    	android:minHeight="0dp"
+    	android:padding="5dp"
+    	android:text="可更新"
+    	android:textSize="14sp"
+    	android:textColor="#FF0000"
+    	android:visibility="gone" />
+
+</RelativeLayout>

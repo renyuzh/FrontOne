@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:background="@drawable/btn_list_item_bg"
+	    android:gravity="center"
+	    android:padding="15dp"
+	    android:text="清除历史记录"
+	    android:textStyle="bold"
+	    android:textColor="#AAAAAA"
+	    android:textSize="@dimen/text_middle" />
+
+</LinearLayout>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.onebus"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 来电消音 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.NFC" />
+
+    <!-- Camera -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" >
+    </uses-permission>
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <application
+        android:name=".OneBusApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:persistent="true"
+        android:theme="@style/NoActionBarTheme" >
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="mhsdc5grSo3s7t1nG0BsDDcC" />
+        <!--    uRlSOIsvlq4K31puaPhUk87E-->
+
+
+        <!-- begin: baidu speech sdk -->
+        <!-- 请填写真实的APP_ID API_KEY SECRET_KEY -->
+        <meta-data
+            android:name="com.baidu.speech.APP_ID"
+            android:value="6410716" />
+        <meta-data
+            android:name="com.baidu.speech.API_KEY"
+            android:value="SpDSlPCKvgrpPH7q6USQ8dE6" />
+        <meta-data
+            android:name="com.baidu.speech.SECRET_KEY"
+            android:value="PuE4hYl5xwTuqa6W3vGlsUZqM1Wr3G6L" />
+
+        <service
+            android:name="com.baidu.speech.VoiceRecognitionService"
+            android:exported="false" />
+
+        <activity
+            android:name="com.baidu.voicerecognition.android.ui.BaiduASRDigitalDialog"
+            android:configChanges="orientation|keyboardHidden|screenLayout"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" >
+            <intent-filter>
+                <action android:name="com.baidu.action.RECOGNIZE_SPEECH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- end : baidu speech sdk -->
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+
+        <activity
+            android:name=".view.WelcomeActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".util.GuideViewPager" >
+        </activity>
+        <activity
+            android:name=".view.MainActivity"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.RoutePlanActivity"
+            android:label="@string/title_activity_route_plan" >
+        </activity>
+        <activity
+            android:name=".view.SearchActivity"
+            android:label="@string/title_activity_search" >
+        </activity>
+        <activity android:name=".view.UserActivity" >
+        </activity>
+        <activity
+            android:name=".view.BusLineActivity"
+            android:label="@string/title_activity_bus_line" >
+        </activity>
+        <activity
+            android:name=".view.NearbyActivity"
+            android:label="@string/title_activity_nearby" >
+        </activity>
+        <activity
+            android:name=".view.StationBusLineActivity"
+            android:label="@string/title_activity_station_bus_line" >
+        </activity>
+        <activity
+            android:name=".view.SettingActivity"
+            android:label="@string/title_activity_setting" >
+        </activity>
+        <activity
+            android:name=".view.ShopActivity"
+            android:label="@string/title_activity_shop" >
+        </activity>
+        <activity
+            android:name=".view.OfflineMapActivity"
+            android:label="@string/title_activity_offline_map" >
+        </activity>
+        <activity
+            android:name=".view.SwitchCityActivity"
+            android:label="@string/title_activity_switch_city" >
+        </activity>
+        <activity android:name=".view.UserInformationActivity" >
+        </activity>
+        <activity android:name=".view.ModifyPasswordActivity" >
+        </activity>
+        <activity android:name=".view.ModifyOtherActivity" >
+        </activity>
+        <activity android:name=".view.FeedBackActivity" >
+        </activity>
+        <activity android:name=".view.ComplaintsActivity" >
+        </activity>
+        <activity
+            android:name=".view.CardActivity"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/filter_nfc" />
+        </activity>
+        <activity android:name=".view.LoginActivity" >
+        </activity>
+        <activity android:name=".view.RegisterActivity" >
+        </activity>
+        <activity
+            android:name=".view.CardLogActivity"
+            android:label="@string/title_activity_card_log" >
+        </activity>
+        <activity android:name=".view.AlarmActivity" >
+        </activity>
+
+        <!-- alipay sdk begin -->
+        <activity
+            android:name="com.alipay.pay.PayDemoActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.alipay.pay.PayResultActivity"
+            android:label="@string/title_activity_pay_result" >
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+
+        <!-- alipay sdk end -->
+
+
+        <!-- QrCode -->
+        <activity android:name=".zxing.MipcaActivityCapture" >
+        </activity>
+
+        <service
+            android:name=".service.AlarmService"
+            android:label="AlarmService" >
+            <intent-filter android:priority="1000" >
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".view.NewsInformationActivity"
+            android:label="@string/title_activity_more_bus" >
+        </activity>
+        <activity
+            android:name=".view.NoticeActivity"
+            android:label="@string/title_activity_more_bus" >
+        </activity>
+        <activity
+            android:name=".view.TransitRouteResultActivity"
+            android:label="@string/title_activity_transit_route_result" >
+        </activity>
+        <activity
+            android:name=".view.CollectActivity"
+            android:label="@string/title_activity_collect" >
+        </activity>
+        <activity android:name=".view.ScoreActivity" >
+        </activity>
+        <activity android:name=".view.ScoreExchangeActivity" >
+        </activity>
+        <activity android:name=".view.ScoreRulesActivity" >
+        </activity>
+        <activity android:name=".view.ForgetPasswordActivity" >
+        </activity>
+        <activity
+            android:name=".view.CollectTransitRouteResultActivity"
+            android:label="@string/title_activity_collect_transit_route_result" >
+        </activity>
+    </application>
+
+</manifest>

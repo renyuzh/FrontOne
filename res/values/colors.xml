@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 应用主色 -->
+    <color name="app_color_white">#FFFFFF</color>
+    
+    <color name="light_gray_bg" >#CCEFEFEF</color>
+    
+    <color name="light_gray" >#FF777777</color>
+    
+    <color name="light_gray_text">#CC666666</color>
+    <color name="light_black_text">#CC444444</color>
+    
+    
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorFeedBackground1">#ffffff</color>
+    <color name="colorFeedBackground2">#f0f0f0</color>
+    
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+</resources>

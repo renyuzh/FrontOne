@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="icon" format="reference"></attr>
+    <attr name="text" format="string"></attr>
+    <attr name="text_color" format="color"></attr>
+    <attr name="text_size" format="dimension"></attr>
+    <attr name="text_marginLeft" format="dimension"></attr>
+    
+    <declare-styleable name="MainWidgetImageButton">
+        <attr name="icon"></attr>
+	    <attr name="text"></attr>
+	    <attr name="text_color"></attr>
+	    <attr name="text_marginLeft"></attr>
+	    <attr name="text_size"></attr>
+    </declare-styleable>
+    
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+    
+</resources>

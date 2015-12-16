@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/routeplan_list_item_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="title"
+        android:textSize="@dimen/text_middle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal" >
+	        <ImageView 
+	            android:layout_width="20dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:src="@drawable/icon_route_list_time"/>
+	        <TextView
+	            android:id="@+id/routeplan_list_item_time"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:layout_marginLeft="5dp"
+	            android:layout_weight="1"
+	            android:gravity="center_vertical"
+	            android:text="time"
+	            android:textColor="#777777"
+	            android:textSize="@dimen/text_small" />
+        </LinearLayout>
+        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal" >
+	        <ImageView 
+	            android:layout_width="20dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:src="@drawable/icon_route_list_distance"/>
+	        <TextView
+	            android:id="@+id/routeplan_list_item_distance"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:layout_marginLeft="5dp"
+	            android:layout_weight="1"
+	            android:gravity="center_vertical"
+	            android:text="distance"
+	            android:textColor="#777777"
+	            android:textSize="@dimen/text_small" />
+        </LinearLayout>
+        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal" >
+	        <ImageView 
+	            android:layout_width="20dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:src="@drawable/icon_route_list_walk"/>
+	        <TextView
+	            android:id="@+id/routeplan_list_item_walk"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:layout_marginLeft="5dp"
+	            android:layout_weight="1"
+	            android:gravity="center_vertical"
+	            android:text="walk"
+	            android:textColor="#777777"
+	            android:textSize="@dimen/text_small" />
+        </LinearLayout>
+        
+        
+    </LinearLayout>
+
+</LinearLayout>
